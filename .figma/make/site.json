@@ -1,0 +1,14 @@
+{
+  "title": "Uttar Kalikata Sarbojanin Durgotsav Samity",
+  "description": "Showcases a prominent North Kolkata Durga Pujo committee's events and culture with engaging visuals and interactive features to connect the community.",
+  "icons": {
+    "icon": "/favicon.png"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

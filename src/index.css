@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Hind+Siliguri:wght@600;700&family=Anek+Bangla:wght@700;800;900&family=Tiro+Bangla:ital@0;1&family=Noto+Serif+Bengali:wght@700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import 'tailwindcss';
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes zoomInModal {
+  from { opacity: 0; transform: scale(0.75); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C41E3A transparent;
+}
+*::-webkit-scrollbar { width: 4px; height: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #C41E3A; }
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(253, 246, 227, 0.3);
+}
+
+/* ── Red Velvet Dynamic Curtain Reveal Styles ── */
+.curtain-panel-left {
+  background: linear-gradient(90deg, 
+    #2b0005 0%, 
+    #6b000f 12%, 
+    #990016 25%, 
+    #52000c 38%, 
+    #850013 50%, 
+      #400008 63%, 
+    #7a0012 75%, 
+    #330006 88%, 
+    #66000f 100%
+  );
+  box-shadow: inset -20px 0 35px rgba(0, 0, 0, 0.85), 12px 0 30px rgba(0, 0, 0, 0.9);
+}
+
+.curtain-panel-right {
+  background: linear-gradient(90deg, 
+    #66000f 0%, 
+    #330006 12%, 
+    #7a0012 25%, 
+    #400008 38%, 
+    #850013 50%, 
+    #52000c 63%, 
+    #990016 75%, 
+    #6b000f 88%, 
+    #2b0005 100%
+  );
+  box-shadow: inset 20px 0 35px rgba(0, 0, 0, 0.85), -12px 0 30px rgba(0, 0, 0, 0.9);
+}
+
+/* ── Cinema & Theater Vertical Lifting Velvet Curtain Styles ── */
+.theater-velvet-curtain {
+  background: repeating-linear-gradient(
+    90deg,
+    #2b0005 0px,
+    #6b000f 25px,
+    #990016 55px,
+    #52000c 85px,
+    #850013 115px,
+    #400008 145px,
+    #7a0012 175px,
+    #330006 205px,
+    #66000f 235px
+  );
+  box-shadow: inset 0 -30px 50px rgba(0, 0, 0, 0.95), 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.theater-pelmet-header {
+  background: linear-gradient(180deg, #1f0003 0%, #52000c 50%, #3a0007 100%);
+  border-bottom: 4px solid #D4A017;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
+}
+
+.gold-fringe-bottom {
+  background: repeating-linear-gradient(
+    90deg,
+    #D4A017 0px,
+    #FCE205 3px,
+    #B8860B 6px,
+    #8B6508 9px
+  );
+  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+}
+
+/* ── Mobile Responsive Optimizations ── */
+@media (max-width: 640px) {
+  .curtain-center-badge {
+    transform: translate(-50%, -50%) scale(0.85) !important;
+  }
+
+  .floating-dhaki-btn {
+    bottom: 16px !important;
+    right: 14px !important;
+    gap: 6px !important;
+  }
+
+  .floating-playlist-pill {
+    padding: 6px 12px !important;
+    font-size: 9px !important;
+  }
+
+  .playlist-drawer-card {
+    bottom: 78px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 16px !important;
+  }
+
+  .schedule-tabs-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .brochure-qr-card {
+    padding: 32px 16px !important;
+  }
+  .brochure-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .qr-scanner-modal-content {
+    padding: 24px 16px !important;
+    width: 95vw !important;
+  }
+  .art-process-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .facebook-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .pandal-circuit-container {
+    gap: 8px !important;
+  }
+  .pandal-circuit-pill {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* ── Glowing Pradip / Diya Flame Animations ── */
+@keyframes pradipFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 16px #FF4500);
+  }
+  25% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px #FFD700) drop-shadow(0 0 22px #FF4500);
+  }
+  50% {
+    transform: scale(0.95) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 12px #FF8C00);
+  }
+  75% {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 10px #FFD700) drop-shadow(0 0 20px #FF4500);
+  }
+}
+
+.pradip-flame-animated {
+  animation: pradipFlicker 1.8s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* ── QR Scanner Laser Animation ── */
+@keyframes scanLaser {
+  0% { top: 12%; opacity: 0.5; }
+  50% { top: 82%; opacity: 1; filter: drop-shadow(0 0 8px #52C41A); }
+  100% { top: 12%; opacity: 0.5; }
+}
+
+.scan-laser-line {
+  animation: scanLaser 2s infinite ease-in-out;
+}
