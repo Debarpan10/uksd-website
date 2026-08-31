@@ -1,40 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/((?!.*\\.).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/Brochure_UKSD_2026.pdf",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/pdf"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "inline; filename=\"Brochure_UKSD_2026.pdf\""
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(mp3|wav|ogg)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "audio/mpeg"
-        },
-        {
-          "key": "Accept-Ranges",
-          "value": "bytes"
-        }
-      ]
     }
   ]
 }
