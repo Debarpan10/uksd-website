@@ -927,7 +927,7 @@ export default function App() {
         borderBottom: `1px solid ${C.border}`
       }}>
         {/* Top Header Row */}
-        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '10px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="navbar-header-row" style={{ maxWidth: 1400, margin: '0 auto', padding: '10px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo & Stacked Title */}
           <div onClick={() => setLogoZoomed(true)} title="Click to view full logo" style={{ display: 'flex', alignItems: 'center', gap: 14, cursor: 'pointer', userSelect: 'none', flexShrink: 0 }}>
             <img src={logoImg} alt="Uttar Kalikata Sarbojanin Durgotsav Samity logo" style={{ width: 68, height: 68, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, boxShadow: '0 0 20px rgba(196,30,58,0.55), 0 0 10px rgba(212,160,23,0.3)', border: `2px solid ${C.borderBright}`, transition: 'transform 0.25s, box-shadow 0.25s' }}
@@ -976,18 +976,40 @@ export default function App() {
           </div>
 
           {/* Social Icons & Mobile Toggle */}
-          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-            {[
-              { sym: 'f', title: 'Facebook', url: 'https://www.facebook.com/people/Uttar-Kalikata-Sarbojanin-Durgatsav-Samity/61578144026365/' },
-              { sym: '◉', title: 'Instagram', url: 'https://www.instagram.com/uttar_kalikata_sarbojanin' },
-              { sym: '▶', title: 'YouTube', url: 'https://www.youtube.com/@UttarKalikataSarbojanin' }
-            ].map(s => (
-              <a key={s.title} href={s.url} target="_blank" rel="noopener noreferrer" title={s.title} style={{ width: 32, height: 32, borderRadius: '50%', border: `1px solid ${C.border}`, background: 'transparent', color: C.gold, fontSize: 13, cursor: 'pointer', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = C.gold; (e.currentTarget as HTMLAnchorElement).style.color = C.bg }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = C.gold }}
-              >{s.sym}</a>
-            ))}
-            <button onClick={() => setMenuOpen(o => !o)} className="xl:hidden" style={{ background: 'none', border: 'none', color: C.gold, fontSize: 22, cursor: 'pointer', padding: '4px 8px', lineHeight: 1 }}>
+          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            <div className="hidden sm:flex" style={{ gap: 8, alignItems: 'center' }}>
+              {[
+                { sym: 'f', title: 'Facebook', url: 'https://www.facebook.com/people/Uttar-Kalikata-Sarbojanin-Durgatsav-Samity/61578144026365/' },
+                { sym: '◉', title: 'Instagram', url: 'https://www.instagram.com/uttar_kalikata_sarbojanin' },
+                { sym: '▶', title: 'YouTube', url: 'https://www.youtube.com/@UttarKalikataSarbojanin' }
+              ].map(s => (
+                <a key={s.title} href={s.url} target="_blank" rel="noopener noreferrer" title={s.title} style={{ width: 32, height: 32, borderRadius: '50%', border: `1px solid ${C.border}`, background: 'transparent', color: C.gold, fontSize: 13, cursor: 'pointer', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = C.gold; (e.currentTarget as HTMLAnchorElement).style.color = C.bg }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = C.gold }}
+                >{s.sym}</a>
+              ))}
+            </div>
+            <button
+              onClick={() => setMenuOpen(o => !o)}
+              className="xl:hidden"
+              aria-label="Toggle Menu"
+              style={{
+                background: 'rgba(212,160,23,0.12)',
+                border: `1px solid ${C.borderBright}`,
+                borderRadius: 8,
+                color: C.gold,
+                fontSize: 20,
+                cursor: 'pointer',
+                padding: '6px 12px',
+                marginRight: 6,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                lineHeight: 1,
+                boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                transition: 'all 0.2s'
+              }}
+            >
               {menuOpen ? '✕' : '☰'}
             </button>
           </div>
