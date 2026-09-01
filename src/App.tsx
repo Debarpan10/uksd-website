@@ -943,9 +943,8 @@ export default function App() {
             </div>
           </div>
 
-          {/* Dynamic Flex Bengali Welcome Header Banner */}
-          <div style={{
-            display: 'flex',
+          {/* Dynamic Flex Bengali Welcome Header Banner (Hidden on small mobile screens to prevent overflow) */}
+          <div className="hidden lg:flex" style={{
             alignItems: 'center',
             justifyContent: 'center',
             gap: 10,
@@ -3376,8 +3375,8 @@ export default function App() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" style={{ padding: '100px 24px', borderTop: `1px solid ${C.border}`, background: 'rgba(139,0,0,0.05)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 72 }}>
+      <section id="contact" style={{ padding: '80px 20px', borderTop: `1px solid ${C.border}`, background: 'rgba(139,0,0,0.05)', overflow: 'hidden' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 48 }}>
           <div>
             <SectionLabelLeft>Find Us</SectionLabelLeft>
             <h2 style={{ fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 700, lineHeight: 1.15, marginBottom: 36 }}>
@@ -3466,9 +3465,9 @@ export default function App() {
                   ✓ Thank you! You have been subscribed to UKSD updates.
                 </div>
               ) : (
-                <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex' }}>
-                  <input type="email" name="newsletterEmail" required placeholder="your@email.com" style={{ flex: 1, padding: '11px 14px', background: 'rgba(255,255,255,0.04)', border: `1px solid ${C.border}`, borderRight: 'none', color: C.cream, fontSize: 13, outline: 'none', fontFamily: FONT_BODY }} />
-                  <button type="submit" style={{ padding: '11px 18px', background: C.crimson, border: 'none', color: C.cream, fontFamily: FONT_SERIF, fontSize: 11, letterSpacing: '0.12em', cursor: 'pointer', flexShrink: 0 }}>SUBSCRIBE</button>
+                <form onSubmit={handleNewsletterSubmit} className="newsletter-form-container" style={{ display: 'flex', width: '100%', maxWidth: '100%' }}>
+                  <input type="email" name="newsletterEmail" required placeholder="your@email.com" className="newsletter-input" style={{ flex: 1, minWidth: 0, padding: '11px 14px', background: 'rgba(255,255,255,0.04)', border: `1px solid ${C.border}`, borderRight: 'none', color: C.cream, fontSize: 13, outline: 'none', fontFamily: FONT_BODY }} />
+                  <button type="submit" className="newsletter-btn" style={{ padding: '11px 18px', background: C.crimson, border: 'none', color: C.cream, fontFamily: FONT_SERIF, fontSize: 11, letterSpacing: '0.12em', cursor: 'pointer', flexShrink: 0 }}>SUBSCRIBE</button>
                 </form>
               )}
             </div>
