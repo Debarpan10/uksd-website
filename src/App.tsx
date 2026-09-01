@@ -993,6 +993,47 @@ export default function App() {
           </div>
         </div>
 
+        {/* Mobile Sub-Header Row: Dynamic Bengali Welcome Banner */}
+        <div className="flex lg:hidden" style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '6px 14px 8px',
+          borderTop: '1px solid rgba(212,160,23,0.15)',
+          background: 'rgba(10,5,2,0.85)'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+            width: '100%',
+            maxWidth: 420,
+            padding: '5px 12px',
+            borderRadius: 24,
+            background: 'linear-gradient(90deg, rgba(196,30,58,0.2) 0%, rgba(212,160,23,0.25) 50%, rgba(196,30,58,0.2) 100%)',
+            border: `1px solid ${C.borderBright}`,
+            boxShadow: '0 0 14px rgba(212,160,23,0.18), inset 0 0 8px rgba(196,30,58,0.1)',
+            textAlign: 'center'
+          }}>
+            <span style={{ fontSize: 14, filter: 'drop-shadow(0 0 6px rgba(212,160,23,0.6))' }}>🪔</span>
+            <span style={{
+              fontFamily: FONT_BENGALI,
+              fontSize: 'clamp(12px, 3.8vw, 15px)',
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, #FDF6E3 0%, #D4A017 45%, #E8721C 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              letterSpacing: '0.02em',
+              lineHeight: 1.25,
+              textShadow: '0 1px 6px rgba(0,0,0,0.5)',
+              whiteSpace: 'nowrap'
+            }}>
+              উত্তর কলিকাতা সার্বজনীনে আপনাদের স্বাগত
+            </span>
+            <span style={{ fontSize: 14, filter: 'drop-shadow(0 0 6px rgba(212,160,23,0.6))' }}>🌺</span>
+          </div>
+        </div>
+
         {/* Dedicated Bottom Navigation Bar for Desktop (xl screens) */}
         <div className="hidden xl:block" style={{ borderTop: `1px solid ${C.border}`, background: 'rgba(10,5,2,0.92)' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, height: 42 }}>
