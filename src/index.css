@@ -195,6 +195,17 @@ textarea::placeholder {
     text-align: center !important;
     justify-content: center !important;
   }
+  .gallery-caption-overlay {
+    opacity: 1 !important;
+  }
+}
+
+/* ── Gallery Card Caption Rules ── */
+.gallery-caption-overlay {
+  opacity: 0;
+}
+.gallery-item-card:hover .gallery-caption-overlay {
+  opacity: 1;
 }
 
 /* ── Glowing Pradip / Diya Flame Animations ── */

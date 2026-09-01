@@ -1639,34 +1639,52 @@ export default function App() {
           </div>
           <div style={{ columns: 'auto 260px', gap: 12 }}>
             {filtered.map((img, i) => (
-              <div key={img.url + i} onClick={() => setLightbox(img.url)} style={{ breakInside: 'avoid', marginBottom: 12, position: 'relative', overflow: 'hidden', cursor: 'zoom-in', background: C.crimsonDeep, display: 'block' }}>
+              <div key={img.url + i} onClick={() => setLightbox(img.url)} className="gallery-item-card" style={{ breakInside: 'avoid', marginBottom: 12, position: 'relative', overflow: 'hidden', cursor: 'zoom-in', background: C.crimsonDeep, display: 'block', borderRadius: 8 }}>
                 <img src={img.url} alt={img.alt} style={{ width: '100%', display: 'block', transition: 'transform 0.45s' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.06)' }}
                   onMouseLeave={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)' }}
                 />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,9,4,0.8) 0%, transparent 55%)', opacity: 0, transition: 'opacity 0.3s', display: 'flex', alignItems: 'flex-end', padding: 14 }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.opacity = '1' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.opacity = '0' }}
-                >
+                <div className="gallery-caption-overlay" style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background: 'linear-gradient(to top, rgba(15,9,4,0.95) 0%, rgba(15,9,4,0.7) 65%, transparent 100%)',
+                  padding: '28px 14px 12px',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  transition: 'opacity 0.3s'
+                }}>
                   <div>
-                    <div style={{ fontSize: 10, color: C.gold, fontFamily: FONT_SERIF, letterSpacing: '0.15em' }}>{img.year}</div>
-                    <div style={{ fontSize: 12, color: C.cream, marginTop: 2 }}>{img.alt}</div>
+                    <div style={{ fontSize: 10, color: C.gold, fontFamily: FONT_SERIF, letterSpacing: '0.15em', fontWeight: 600 }}>{img.year}</div>
+                    <div style={{ fontSize: 12, color: C.cream, marginTop: 2, lineHeight: 1.35, textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{img.alt}</div>
                   </div>
                 </div>
-                <div style={{ position: 'absolute', top: 10, left: 10, background: 'rgba(196,30,58,0.88)', padding: '2px 9px', fontSize: 10, fontFamily: FONT_SERIF, color: C.cream, letterSpacing: '0.1em' }}>{img.year}</div>
+                <div style={{ position: 'absolute', top: 10, left: 10, background: 'rgba(196,30,58,0.88)', padding: '2px 9px', fontSize: 10, fontFamily: FONT_SERIF, color: C.cream, letterSpacing: '0.1em', borderRadius: 4 }}>{img.year}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Lightbox */}
-      {lightbox && (
-        <div onClick={() => setLightbox(null)} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(15,9,4,0.97)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, cursor: 'zoom-out' }}>
-          <img src={lightbox.replace(/w=\d+/, 'w=1400').replace(/h=\d+/, 'h=900')} alt="" style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain' }} />
-          <button onClick={() => setLightbox(null)} style={{ position: 'absolute', top: 22, right: 22, width: 42, height: 42, background: C.crimson, border: 'none', color: C.cream, fontSize: 18, cursor: 'pointer' }}>✕</button>
-        </div>
-      )}
+      {/* Lightbox with Caption Display */}
+      {lightbox && (() => {
+        const currentItem = GALLERY_IMAGES.find(img => img.url === lightbox)
+        return (
+          <div onClick={() => setLightbox(null)} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(15,9,4,0.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20, cursor: 'zoom-out' }}>
+            <div style={{ position: 'relative', maxWidth: '92vw', maxHeight: '85vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <img src={lightbox.replace(/w=\d+/, 'w=1400').replace(/h=\d+/, 'h=900')} alt={currentItem?.alt || ''} style={{ maxWidth: '100%', maxHeight: '78vh', objectFit: 'contain', borderRadius: 8, boxShadow: '0 8px 32px rgba(0,0,0,0.8)' }} />
+              {currentItem && (
+                <div style={{ marginTop: 12, textAlign: 'center', maxWidth: 600 }}>
+                  <div style={{ color: C.gold, fontFamily: FONT_SERIF, fontSize: 11, letterSpacing: '0.15em' }}>{currentItem.year} ARCHIVE</div>
+                  <div style={{ color: C.cream, fontSize: 14, marginTop: 4, fontWeight: 500 }}>{currentItem.alt}</div>
+                </div>
+              )}
+            </div>
+            <button onClick={() => setLightbox(null)} style={{ position: 'absolute', top: 22, right: 22, width: 42, height: 42, background: C.crimson, border: 'none', color: C.cream, fontSize: 18, cursor: 'pointer', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✕</button>
+          </div>
+        )
+      })()}
 
       {/* ── QR CODE CAMERA SCANNER MODAL ── */}
       {showQrScannerModal && (
