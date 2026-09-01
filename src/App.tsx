@@ -1071,12 +1071,12 @@ export default function App() {
 
       {/* ── HERO ── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
-        <div className="hero-backdrop-container" style={{ position: 'absolute', inset: 0, background: C.bgDark, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
-          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" className="hero-backdrop-img" style={{ width: '100%', height: '100%', objectPosition: 'center top' }} />
+        <div className="hero-backdrop-container">
+          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" className="hero-backdrop-img" />
         </div>
-        {/* Terracotta-clay vignette, echoing the committee emblem's weathered backdrop */}
-        <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 0%, rgba(139,90,43,0.28) 0%, rgba(92,58,30,0.12) 35%, transparent 65%)` }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(15,9,4,0.3) 0%, rgba(15,9,4,0.5) 40%, rgba(15,9,4,0.92) 80%, rgba(15,9,4,1) 100%)' }} />
+        {/* Terracotta-clay vignette */}
+        <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 15%, rgba(212,160,23,0.18) 0%, rgba(139,90,43,0.12) 40%, transparent 70%)` }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,9,4,0.3) 0%, rgba(15,9,4,0.12) 30%, rgba(15,9,4,0.65) 70%, rgba(15,9,4,0.98) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, opacity: 0.045, backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='72' height='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 4 L68 36 L36 68 L4 36 Z' fill='none' stroke='%23D4A017' stroke-width='1'/%3E%3C/svg%3E\")", backgroundSize: '72px 72px' }} />
 
         {/* ── 2-HALF HORIZONTAL PARTING THEATRE CURTAIN OVERLAY ── */}
