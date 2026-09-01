@@ -1094,7 +1094,10 @@ export default function App() {
       {/* ── HERO ── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
         <div className="hero-backdrop-container">
-          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" className="hero-backdrop-img" />
+          {/* Desktop Backdrop: Keeps existing desktop backdrop intact */}
+          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" className="hero-backdrop-img hero-backdrop-desktop hidden sm:block" />
+          {/* Mobile Backdrop: Dedicated mobile composition */}
+          <img src="/mobile_hero_bg.png" alt="Durga Puja Pratima mobile backdrop" className="hero-backdrop-img hero-backdrop-mobile block sm:hidden" />
         </div>
         {/* Terracotta-clay vignette */}
         <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 15%, rgba(212,160,23,0.18) 0%, rgba(139,90,43,0.12) 40%, transparent 70%)` }} />

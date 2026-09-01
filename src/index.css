@@ -201,18 +201,15 @@ textarea::placeholder {
   .gallery-caption-overlay {
     opacity: 1 !important;
   }
-  .gallery-caption-overlay {
-    opacity: 1 !important;
-  }
-  .hero-backdrop-img {
+  .hero-backdrop-mobile {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 22% !important;
-    opacity: 0.88 !important;
+    object-position: center top !important;
+    opacity: 0.92 !important;
   }
   .hero-content-wrapper {
-    padding-top: 100px !important;
+    padding-top: 90px !important;
     padding-left: 18px !important;
     padding-right: 18px !important;
   }
