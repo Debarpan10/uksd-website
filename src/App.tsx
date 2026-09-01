@@ -4,6 +4,7 @@ import shambhuImg from '@/imports/Shambhu_saha.png'
 import dhimanImg from '@/imports/Dhiman_Sutar.png'
 import dhakMusic from '@/imports/mythologychallengeryt-durga-puja-dhak-sound-125241.mp3'
 import logoImg from '@/imports/uksd_logo.png'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 const PUJA_DATE = new Date('2026-10-16T00:00:00')
 
@@ -3945,6 +3946,7 @@ export default function App() {
         </div>
       )}
 
+      <SpeedInsights />
     </div>
   )
 }
