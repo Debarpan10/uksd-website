@@ -1071,8 +1071,8 @@ export default function App() {
 
       {/* ── HERO ── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: C.bgDark }}>
-          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', opacity: 0.7 }} />
+        <div className="hero-backdrop-container" style={{ position: 'absolute', inset: 0, background: C.bgDark, display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <img src="/onebg.jpeg" alt="Elaborate Durga Puja idol" className="hero-backdrop-img" style={{ width: '100%', height: '100%', objectPosition: 'center top' }} />
         </div>
         {/* Terracotta-clay vignette, echoing the committee emblem's weathered backdrop */}
         <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 0%, rgba(139,90,43,0.28) 0%, rgba(92,58,30,0.12) 35%, transparent 65%)` }} />
@@ -1199,7 +1199,7 @@ export default function App() {
           </div>
         </div>
 
-        <div style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', padding: '140px 24px 0', width: '100%' }}>
+        <div className="hero-content-wrapper" style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', padding: '140px 24px 0', width: '100%' }}>
           <SectionLabelLeft>Est. 1932 · North Kolkata · West Bengal</SectionLabelLeft>
           <h1 style={{
             fontFamily: FONT_BENGALI,

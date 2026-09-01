@@ -198,6 +198,35 @@ textarea::placeholder {
   .gallery-caption-overlay {
     opacity: 1 !important;
   }
+  .hero-backdrop-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    opacity: 0.85 !important;
+    filter: drop-shadow(0 0 20px rgba(212, 160, 23, 0.25)) !important;
+  }
+  .hero-content-wrapper {
+    padding-top: 80px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ── Hero Backdrop Styles ── */
+.hero-backdrop-container {
+  position: absolute;
+  inset: 0;
+  background: #170F08;
+  overflow: hidden;
+}
+.hero-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.72;
 }
 
 /* ── Gallery Card Caption Rules ── */
