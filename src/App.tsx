@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import QRCode from 'qrcode'
+import { Analytics } from '@vercel/analytics/react'
 import shambhuImg from '@/imports/Shambhu_saha.png'
 import dhimanImg from '@/imports/Dhiman_Sutar.png'
 import dhakMusic from '@/imports/mythologychallengeryt-durga-puja-dhak-sound-125241.mp3'
@@ -3945,6 +3946,7 @@ export default function App() {
         </div>
       )}
 
+      <Analytics />
     </div>
   )
 }
